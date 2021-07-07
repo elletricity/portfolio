@@ -66,6 +66,8 @@ module.exports = function(eleventyConfig) {
 			} else if(type === "thumbnail") {
 				newWidths = [50, 400, 800];
 			}
+		} else if(category === "archive") {
+			newWidths = [100, null, null]
 		}
 
 		let stats = await Image(src, {

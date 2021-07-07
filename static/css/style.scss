@@ -2,6 +2,7 @@
 @import 'partials/shared/reset';
 @import 'partials/shared/core';
 @import 'partials/shared/grid';
+@import 'partials/shared/archive';
 
 @import 'partials/navigation/header';
 @import 'partials/navigation/footer';
@@ -42,4 +43,7 @@ figure, picture, img {
 .page-error {
 	@import 'partials/pages/error';
 	background: url('../images/error.gif') center center / cover;
+}
+.page-post {
+	@import 'partials/pages/post';
 }

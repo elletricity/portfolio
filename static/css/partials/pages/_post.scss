@@ -1,0 +1,92 @@
+& {
+	background: #f1f1f1;
+	color: $iron;
+	@media (prefers-color-scheme: dark) {
+		background: $iron;
+		color: white;
+	}
+}
+
+main {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: $p calc(#{$p*2} + env(safe-area-inset-left));
+	width: 100%;
+	@include max {
+		padding: $p max(#{$p*2}, env(safe-area-inset-left));
+	}
+}
+
+h1 {
+	font-size: 48px;
+	font-style: italic;
+	font-weight: bold;
+	margin-bottom: $p;
+}
+
+article {
+	font-size: 24px;
+
+	p {
+		margin-bottom: $p*2;
+	}
+
+	a {
+		will-change: color, transform, text-decoration-color;
+		transition: .1s ease-out;
+		display: inline-block;
+		position: relative;
+		color: $iron;
+		text-decoration: underline;
+		text-decoration-style: wavy;
+		text-decoration-color: $salmon;
+		@media (prefers-color-scheme: dark) {
+			color: white;
+		}
+		&:before {
+			@include border-radius(2px);
+			will-change: opacity, background-color;
+			transition: .1s ease-out;
+			opacity: 0;
+			content: "";
+			display: block;
+			position: absolute;
+			top: -0.225em;
+			left: -0.45em;
+			width: calc(100% + 0.9em);
+			height: calc(100% + 0.675em);
+			background-color: rgba(white, .9);
+			z-index: -1;
+			@media (prefers-color-scheme: dark) {
+				background-color: rgba(mix(white, $iron, 10%), .9);
+			}
+		}
+		&:hover, &:focus {
+			transform: scale(1.01);
+			color: $salmon;
+			text-decoration-color: $iron;
+			@media (prefers-color-scheme: dark) {
+				text-decoration-color: white;
+			}
+			&:before {
+				opacity: 1;
+			}
+		}
+		&:active {
+			transform: scale(0.95);
+			color: $iron;
+			text-decoration-color: $iron;
+			@media (prefers-color-scheme: dark) {
+				color: white;
+				text-decoration-color: white;
+			}
+			&:before {
+				background-color: rgba(darken(#f1f1f1, 5%), .9);
+				@media (prefers-color-scheme: dark) {
+					background-color: rgba(darken($iron, 5%), .9);
+				}
+			}
+		}
+	}
+}

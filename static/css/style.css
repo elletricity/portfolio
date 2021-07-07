@@ -209,6 +209,14 @@ a {
   text-decoration: none;
 }
 
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
 .grid {
   display: grid;
   grid-gap: 18px;
@@ -610,6 +618,68 @@ a {
 }
 .grid-filters input:checked ~ ul li:nth-child(6) {
   transition-delay: 0.25s;
+}
+
+.page-post .photo-row {
+  display: grid;
+  grid-gap: 24px;
+  margin-bottom: 24px;
+}
+.page-post .photo-row p {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+@media only screen and (min-width: 1000px) {
+  .page-post .photo-row-2-1-1 {
+    grid-template: "a a" "b c";
+  }
+  .page-post .photo-row-2-1-1 > div:nth-child(1) {
+    grid-area: a;
+  }
+  .page-post .photo-row-2-1-1 > div:nth-child(2) {
+    grid-area: b;
+  }
+  .page-post .photo-row-2-1-1 > div:nth-child(3) {
+    grid-area: c;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .page-post .photo-row-2-1-1-1-1 {
+    grid-template: "a a" "b c" "d e";
+  }
+  .page-post .photo-row-2-1-1-1-1 > div:nth-child(1) {
+    grid-area: a;
+  }
+  .page-post .photo-row-2-1-1-1-1 > div:nth-child(2) {
+    grid-area: b;
+  }
+  .page-post .photo-row-2-1-1-1-1 > div:nth-child(3) {
+    grid-area: c;
+  }
+  .page-post .photo-row-2-1-1-1-1 > div:nth-child(4) {
+    grid-area: d;
+  }
+  .page-post .photo-row-2-1-1-1-1 > div:nth-child(5) {
+    grid-area: e;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .page-post .photo-row-3-1-1-1 {
+    grid-template: "a a a" "b c d";
+  }
+  .page-post .photo-row-3-1-1-1 > div:nth-child(1) {
+    grid-area: a;
+  }
+  .page-post .photo-row-3-1-1-1 > div:nth-child(2) {
+    grid-area: b;
+  }
+  .page-post .photo-row-3-1-1-1 > div:nth-child(3) {
+    grid-area: c;
+  }
+  .page-post .photo-row-3-1-1-1 > div:nth-child(4) {
+    grid-area: d;
+  }
 }
 
 header {
@@ -1837,6 +1907,111 @@ figure, picture, img {
   }
   .page-error main h1 {
     font-size: 72px;
+  }
+}
+
+.page-post {
+  background: #f1f1f1;
+  color: #263238;
+}
+@media (prefers-color-scheme: dark) {
+  .page-post {
+    background: #263238;
+    color: white;
+  }
+}
+.page-post main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px calc(24px + env(safe-area-inset-left));
+  width: 100%;
+}
+@supports (padding: max(0px)) {
+  .page-post main {
+    padding: 12px max(24px, env(safe-area-inset-left));
+  }
+}
+.page-post h1 {
+  font-size: 48px;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.page-post article {
+  font-size: 24px;
+}
+.page-post article p {
+  margin-bottom: 24px;
+}
+.page-post article a {
+  will-change: color, transform, text-decoration-color;
+  transition: 0.1s ease-out;
+  display: inline-block;
+  position: relative;
+  color: #263238;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #f28e62;
+}
+@media (prefers-color-scheme: dark) {
+  .page-post article a {
+    color: white;
+  }
+}
+.page-post article a:before {
+  border-radius: 2px;
+  -webkit-clip-path: inset(0 0 0 0 round 2px 2px 2px 2px);
+  clip-path: inset(0 0 0 0 round 2px 2px 2px 2px);
+  overflow: hidden;
+  will-change: opacity, background-color;
+  transition: 0.1s ease-out;
+  opacity: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.225em;
+  left: -0.45em;
+  width: calc(100% + 0.9em);
+  height: calc(100% + 0.675em);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: -1;
+}
+@media (prefers-color-scheme: dark) {
+  .page-post article a:before {
+    background-color: rgba(60, 71, 76, 0.9);
+  }
+}
+.page-post article a:hover, .page-post article a:focus {
+  transform: scale(1.01);
+  color: #f28e62;
+  text-decoration-color: #263238;
+}
+@media (prefers-color-scheme: dark) {
+  .page-post article a:hover, .page-post article a:focus {
+    text-decoration-color: white;
+  }
+}
+.page-post article a:hover:before, .page-post article a:focus:before {
+  opacity: 1;
+}
+.page-post article a:active {
+  transform: scale(0.95);
+  color: #263238;
+  text-decoration-color: #263238;
+}
+@media (prefers-color-scheme: dark) {
+  .page-post article a:active {
+    color: white;
+    text-decoration-color: white;
+  }
+}
+.page-post article a:active:before {
+  background-color: rgba(228, 228, 228, 0.9);
+}
+@media (prefers-color-scheme: dark) {
+  .page-post article a:active:before {
+    background-color: rgba(28, 36, 41, 0.9);
   }
 }
 

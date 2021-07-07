@@ -1,0 +1,27 @@
+---
+title: Writing
+description: Blog posts from the last half of my life.
+
+uri: writes/
+permalink: "/writes/index.html"
+templateClass: writing
+
+tags: pages
+eleventyNavigation:
+  key: Writing
+  order: 5
+---
+
+{% extends 'layouts/base.njk' %}
+
+{% block menu %}
+	<span class="message">Blog posts from the last half of my life.</span>
+{% endblock %}
+
+{% block content %}
+	<ul>
+		{% for post in collections.posts | reverse %}
+			<li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
