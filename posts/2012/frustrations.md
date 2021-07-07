@@ -2,6 +2,7 @@
 date: 2012-10-18
 title: Frustrations
 layout: layouts/post.njk
+templateEngineOverride: md,njk
 ---
 
 This week has got to be the most exhausting week in my entire existence.

@@ -17,9 +17,18 @@ module.exports = function(eleventyConfig) {
 		return DateTime.fromISO(dateObj, {zone: 'utc'}).toFormat("dd LLLL yyyy");
 	});
 
+	eleventyConfig.addFilter("readableDataDateTime", dateObj => {
+		let dateLong = dateObj.substring(0, dateObj.length-9);
+		return DateTime.fromISO(dateLong, {zone: 'utc'}).toFormat("dd LLLL yyyy");
+	});
+
 	eleventyConfig.addFilter("readableDate", dateObj => {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLLL yyyy");
 	});
+
+	eleventyConfig.addFilter("jsonToHtml", contentObj => {
+		return contentObj;
+	})
 
 	eleventyConfig.addFilter("isoFilter", function(filterObj) {
 		let array = filterObj.split(' ');

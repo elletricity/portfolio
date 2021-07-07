@@ -2,6 +2,7 @@
 date: 2012-10-02
 title: Inspirational messages
 layout: layouts/post.njk
+templateEngineOverride: md,njk
 ---
 
 Once in a while, I get a really sweet, thoughtful message on my [tumblog](http://elleusine.net), and here’s one that really made me smile:
