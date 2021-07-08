@@ -44,6 +44,9 @@ figure, picture, img {
 	@import 'partials/pages/error';
 	background: url('../images/error.gif') center center / cover;
 }
+.page-writing {
+	@import 'partials/pages/writing';
+}
 .page-post {
 	@import 'partials/pages/post';
 }

@@ -1,4 +1,4 @@
-header {
+.page-header {
 	display: flex;
 	align-items: center;
 	align-content: center;
@@ -84,7 +84,7 @@ header {
 }
 
 @media only screen and (min-width: 1000px) {
-	header {
+	.page-header {
 		padding: $p*2;
 		.go-home {
 			right: $p*6;

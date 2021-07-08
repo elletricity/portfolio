@@ -1,0 +1,20 @@
+---
+date: 2006-01-01
+title: Xanga archives
+layout: layouts/post.njk
+templateEngineOverride: md,njk
+---
+
+This is an archive of Xanga posts from 2005-2006. I was only 15, so please bear with the grammar and content.
+
+<ul class="grid-pack grid-archive" role="list">
+{% for post in xanga %}
+<li class="grid-item post-archive">
+	<div>
+		<h2>{{ post.postDate | readableDataDateTime}}</h2>
+		<hr/>
+		<div>{{ post.content | safe }}</div>
+	</div>
+</li>
+{% endfor %}
+</ul>

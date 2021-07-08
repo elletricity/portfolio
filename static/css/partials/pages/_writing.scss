@@ -1,0 +1,22 @@
+& {
+	background: #f1f1f1;
+	color: $iron;
+	@media (prefers-color-scheme: dark) {
+		background: $iron;
+		color: white;
+	}
+}
+
+main {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: $p calc(#{$p*2} + env(safe-area-inset-left));
+	width: 100%;
+	@include max {
+		padding: $p max(#{$p*2}, env(safe-area-inset-left));
+	}
+	> ul {
+		list-style: none;
+	}
+}

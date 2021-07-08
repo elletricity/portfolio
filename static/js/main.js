@@ -1,13 +1,24 @@
 let lazyLoadInstance = new LazyLoad();
 
+let xanga = new Isotope(document.querySelector('.grid-archive'), {
+	percentPosition: true,
+	itemSelector: '.grid-item',
+	layoutMode: 'masonry',
+	masonry: {
+		gutter: 24,
+	}
+});
+
 let iso = new Isotope(document.querySelector('.grid-isotope'), {
 	percentPosition: true,
 	layoutMode: 'packery',
 	itemSelector: '.grid-item'
 });
+
 new imagesLoaded(window, { background: true }, function(){
 	setTimeout(() => {
 		iso.layout();
+		xanga.layout();
 		setTimeout(() => {
 			document.querySelector('header').classList.add('active')
 		}, 500);

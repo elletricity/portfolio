@@ -27,8 +27,13 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addFilter("jsonToHtml", contentObj => {
-		return contentObj;
-	})
+		let options = {
+			html: true,
+			linkify: true,
+		}
+		let output = markdownIt(options).render(contentObj);
+		return output;
+	});
 
 	eleventyConfig.addFilter("isoFilter", function(filterObj) {
 		let array = filterObj.split(' ');
